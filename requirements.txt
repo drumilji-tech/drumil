@@ -3,6 +3,6 @@ gunicorn
 dash==2.16.1
 dash-bootstrap-components==1.5.0
 pandas==2.2.2
-PIconnect==0.8.2
+PIconnect
 plotly==5.22.0
 pytz==2024.1

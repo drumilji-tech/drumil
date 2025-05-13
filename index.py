@@ -3,7 +3,6 @@ import dash_bootstrap_components as dbc
 from dash import dcc, Input, Output
 
 from app import app
-server= app.server
 from Utils.Components import (
     gen_date_intervals,
     gen_sticky_header,
@@ -15,8 +14,6 @@ from Utils.UiConstants import (
     HIDDEN_STYLE,
     VISIBLE_STYLE,
 )
-
-server = app.server
 
 treemap_data_from_file = load_treemap_dataset()
 

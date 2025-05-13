@@ -1,0 +1,7 @@
+dash
+numpy
+pandas
+plotly
+python_dateutil
+scipy
+Utils

@@ -1,0 +1,55 @@
+site_name: Auto Issue Identification Application
+
+theme:
+  name: material
+  palette:
+    primary: deep-purple
+    accent: deep-orange
+  features:
+    - navigation.tabs
+    - toc.integrate  
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      baselevel: 2
+      toc_depth: 5
+      permalink: true
+  
+
+plugins:
+  - search
+  - with-pdf:
+      render_js: true
+      headless_chrome_path: "C:/Program Files/Google/Chrome/Application/chrome.exe"
+      cover_subtitle: "Proof of Concept  - ReGenerate Consulting 2023"
+  - mermaid2
+  - mkdocstrings:
+      handlers:
+        python:
+          setup_commands:
+            - import os
+            - import sys
+
+
+extra_css:
+  - assets/css/custom.css
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  
+
+nav:
+  - User Guide:
+      - Overview: user_guide.md
+      - Running the Application: running_the_application.md
+      - Data Preparation: data_preparation.md
+      - Data Cleaning and Filtering: data_cleaning_and_filtering.md
+      - Data Transformation: transformation_model.md
+      - User Interface Model: ui_model.md
+      - Data Reference: data_dictionary.md
+  - API Reference: reference.md
+
+

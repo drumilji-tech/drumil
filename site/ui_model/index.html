@@ -1,0 +1,790 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../transformation_model/">
+      
+      
+        <link rel="next" href="../data_dictionary/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>User Interface Model - Auto Issue Identification Application</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-interface" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Auto Issue Identification Application" class="md-header__button md-logo" aria-label="Auto Issue Identification Application" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Auto Issue Identification Application
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Interface Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../user_guide/" class="md-tabs__link">
+          
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reference/" class="md-tabs__link">
+        
+  
+    
+  
+  API Reference
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Auto Issue Identification Application" class="md-nav__button md-logo" aria-label="Auto Issue Identification Application" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Auto Issue Identification Application
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../running_the_application/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running the Application
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_preparation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Preparation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_cleaning_and_filtering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Cleaning and Filtering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transformation_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Transformation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    User Interface Model
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    User Interface Model
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    User Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="User Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dash" class="md-nav__link">
+    Dash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ui-landscape" class="md-nav__link">
+    The UI Landscape
+  </a>
+  
+    <nav class="md-nav" aria-label="The UI Landscape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    Callbacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-structure" class="md-nav__link">
+    File Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walking-through-the-application" class="md-nav__link">
+    Walking Through the Application
+  </a>
+  
+    <nav class="md-nav" aria-label="Walking Through the Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-reliability-page" class="md-nav__link">
+    Performance &amp; Reliability Page
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance & Reliability Page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-performance-treemap" class="md-nav__link">
+    Power Performance Treemap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-temperature-treemap" class="md-nav__link">
+    Component Temperature Treemap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yaw-error-chart" class="md-nav__link">
+    Yaw Error Chart
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fault-analysis-page" class="md-nav__link">
+    Fault Analysis Page
+  </a>
+  
+    <nav class="md-nav" aria-label="Fault Analysis Page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pebble-chart" class="md-nav__link">
+    Pebble Chart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fault-treemap" class="md-nav__link">
+    Fault Treemap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulse-and-pareto-chart" class="md-nav__link">
+    Pulse and Pareto Chart
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-sub-charts" class="md-nav__link">
+    The Sub-Charts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculations-and-transformations" class="md-nav__link">
+    Calculations and Transformations
+  </a>
+  
+    <nav class="md-nav" aria-label="Calculations and Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annual-energy-production-calculation" class="md-nav__link">
+    Annual Energy Production Calculation
+  </a>
+  
+    <nav class="md-nav" aria-label="Annual Energy Production Calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-and-how-aep-is-calculated-in-ai-2" class="md-nav__link">
+    Where and how AEP is calculated in AI 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-ui-calculations-will-be-added" class="md-nav__link">
+    Other UI Calculations Will Be Added ....
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_dictionary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>User Interface Model</h1>
+
+<h2 id="user-interface">User Interface<a class="headerlink" href="#user-interface" title="Permanent link">&para;</a></h2>
+<p>This page details data transformations in the underlying user interface code after the UI files have been generated by the <a href="../transformation_model/">Transformation Engine</a> and are ingested by the UI.</p>
+<h3 id="dash">Dash<a class="headerlink" href="#dash" title="Permanent link">&para;</a></h3>
+<p><a href="https://dash.plotly.com/">Dash</a> is an open-source framework for building interactive web applications using Python (and also R or Julia). It's built on top of Plotly, which is a library for creating interactive graphs and data visualizations, and integrates with Flask for the web server backend, React.js for the frontend, and Plotly.js for the interactive graphics.</p>
+<h3 id="the-ui-landscape">The UI Landscape<a class="headerlink" href="#the-ui-landscape" title="Permanent link">&para;</a></h3>
+<h5 id="callbacks">Callbacks<a class="headerlink" href="#callbacks" title="Permanent link">&para;</a></h5>
+<p>While our tools provide the capabilities for interactivity that we are after, there is still a level of hookup required to get everything to work.</p>
+<p>In our Dash app, interactive charts are updated by callbacks. A callback is simply code that updates part of an app. Specific callbacks fire when front-end components, such as sliders, buttons, widgets and controls, change or are pressed. In-turn, something on the screen will most likely change.</p>
+<p>If we narrow our focus to the charts in the app, we know there is always a callback that is making it update. The callback is invoking a Plotting Function (see diagram below), plugging in all the necessary data, and thus creating the new parameters that get sent to the chart already sitting in the app.</p>
+<p>After a callback has finished running, the front end will update.</p>
+<p><img alt="image" src="../images/functions_to_callbacks_to_charts.png" /></p>
+<h5 id="file-structure">File Structure<a class="headerlink" href="#file-structure" title="Permanent link">&para;</a></h5>
+<p>All the code for the Plotting Functions, Callbacks, Charts, and everything else is organized into files (also called modules) which sit inside folders. Nearly all the code we care about is found here:</p>
+<p><img alt="image" src="../images/files_and_folders.png" /></p>
+<p>We can build a more complete picture of both the code chunks and the file structure by combing them into a single picture. All the UI Functionality is broken up into functional chunks as shown below: </p>
+<p><img alt="ui_map" src="../images/ui_map.png" /></p>
+<h3 id="walking-through-the-application">Walking Through the Application<a class="headerlink" href="#walking-through-the-application" title="Permanent link">&para;</a></h3>
+<p>Once you enter the app, you are greeted with a portal to the app's two pages:
+- The Performance &amp; Reliability Page
+- The Fault Analysis Page</p>
+<p><img alt="image" src="../images/splash_page.png" /></p>
+<p>From here, depending on the kind of analysis you are interested in engaging with, you may enter either the Performance &amp; Reliability Page, which contains 3 charts.</p>
+<p><img width="400px" src="images/perf_and_rel_page.png"></img></p>
+<p>Or the Fault Analysis Page, which also contains 3 charts:</p>
+<p><img width="400px" src="images/fault_analysis_page.png"></img></p>
+<h4 id="performance-reliability-page">Performance &amp; Reliability Page<a class="headerlink" href="#performance-reliability-page" title="Permanent link">&para;</a></h4>
+<h5 id="power-performance-treemap">Power Performance Treemap<a class="headerlink" href="#power-performance-treemap" title="Permanent link">&para;</a></h5>
+<p><img alt="images" src="../images/power_performance_treemap.png" /></p>
+<h5 id="component-temperature-treemap">Component Temperature Treemap<a class="headerlink" href="#component-temperature-treemap" title="Permanent link">&para;</a></h5>
+<p><img alt="images" src="../images/component_temperature_treemap.png" /></p>
+<h5 id="yaw-error-chart">Yaw Error Chart<a class="headerlink" href="#yaw-error-chart" title="Permanent link">&para;</a></h5>
+<p><img alt="images" src="../images/yaw%20error%20chart.png" /></p>
+<h4 id="fault-analysis-page">Fault Analysis Page<a class="headerlink" href="#fault-analysis-page" title="Permanent link">&para;</a></h4>
+<h5 id="pebble-chart">Pebble Chart<a class="headerlink" href="#pebble-chart" title="Permanent link">&para;</a></h5>
+<p><img alt="images" src="../images/pebble%20chart.png" /></p>
+<h5 id="fault-treemap">Fault Treemap<a class="headerlink" href="#fault-treemap" title="Permanent link">&para;</a></h5>
+<p><img alt="images" src="../images/fault%20treemap.png" /></p>
+<h5 id="pulse-and-pareto-chart">Pulse and Pareto Chart<a class="headerlink" href="#pulse-and-pareto-chart" title="Permanent link">&para;</a></h5>
+<p><img alt="images" src="../images/pulse%20and%20pareto%20charts.png" /></p>
+<h4 id="the-sub-charts">The Sub-Charts<a class="headerlink" href="#the-sub-charts" title="Permanent link">&para;</a></h4>
+<p><img alt="images" src="../images/subcharts.png" /></p>
+<h3 id="calculations-and-transformations">Calculations and Transformations<a class="headerlink" href="#calculations-and-transformations" title="Permanent link">&para;</a></h3>
+<p>Some calculations need to occur in the UI layer to provide more responsive interactivity. This section details these operations. </p>
+<h4 id="annual-energy-production-calculation">Annual Energy Production Calculation<a class="headerlink" href="#annual-energy-production-calculation" title="Permanent link">&para;</a></h4>
+<p><a href="../data_dictionary/#annual-energy-production">AEP</a> is calculated anew each time the user changes turbine selections or date ranges in the Level I or II view of power curves. </p>
+<p>Level I <a href="../data_dictionary/#annual-energy-production-delta-percent">AEP Delta %</a>:  </p>
+<p><img alt="level 1 aep" src="../images/ui_power_curve_lvl1_aep.png" />  </p>
+<p>Level II (Neighbors) <a href="../data_dictionary/#annual-energy-production-delta-percent">AEP Delta %</a><br />
+<img alt="level 2 aep" src="../images/ui_power_curve_lvl2_aep.png" /></p>
+<p>Annual Energy Production is the amount of energy in MWh generated by a turbine over the course of one year or 8760 hours. Typically AEP is caluculated as the sum product of the binned power curve and the binned <a href="../data_dictionary/#project-wind-speed-distributions">wind speed distribution</a>.</p>
+<p>In A<sup>2</sup> we apply the same <a href="../data_dictionary/#project-wind-speed-distributions">wind speed distribution</a> to any power curve derived by the user either by selecting a particular turbine in the level 1 or level 2 analysis or adjusting the date range. The AEP Metric in AI<sup>2</sup> is a theoretical one. The calculation yields the annual energy that a given power curve, even if it is only derived from a few days of data, would produce. </p>
+<h5 id="where-and-how-aep-is-calculated-in-ai-2">Where and how AEP is calculated in AI <sup>2</sup><a class="headerlink" href="#where-and-how-aep-is-calculated-in-ai-2" title="Permanent link">&para;</a></h5>
+<h6 id="level-i">Level I<a class="headerlink" href="#level-i" title="Permanent link">&para;</a></h6>
+<ol>
+<li>User clicks on a <a href="../user_guide/#power-performance-treemap">power performance treemap</a> cell and loads either <a href="../user_guide/#level-i-power-curve-and-aep-and-distribution">Level I</a> power curves or <a href="../user_guide/#level-ii-neighboring-turbine-power-curve-comparison-and-aep-delta">Level II power curves</a>.</li>
+<li>Use OEM Power Curve: Directly uses oem_power_curve as provided generating a matrix of 1's to placehold the distribution which is required for AEP calculation.</li>
+<li>Collapse the turbine's daily Power Curves over the selected days to a single power curve: <a href="../reference/#auto-issue-id-application.Charts.PowerCurve.calculate_weighted_average_power_by_turbine">PowerCurve.calculate_weighted_average_power_by_turbine</a> - Computes weighted average power for the target turbine.</li>
+<li><a href="../reference/#auto-issue-id-application.Charts.PowerCurve.calculate_weighted_average_power_by_turbine">PowerCurve.calculate_weighted_average_power_by_turbine</a> - Computes weighted average power for the park average.</li>
+<li>AEP Calculation Preparation: Checks if <a href="../data_dictionary/#project-wind-speed-distributions">wind speed distribution</a> is at integer resolution for AEP calculation.</li>
+<li>Calculate AEPs: <a href="../reference/#auto-issue-id-application.Charts.PowerCurve.full_calculate_AEP">PowerCurve.full_calculate_AEP</a> - Calculates <a href="../data_dictionary/#annual-energy-production">AEP</a> for OEM, target turbine, and park average.
+Compute AEP Delta Percentages: <a href="../reference/#auto-issue-id-application.Charts.PowerCurve.gen_power_curve_traces">PowerCurve.gen_power_curve_traces computes</a>  Calculates the <a href="../data_dictionary/#annual-energy-production-delta-percent">percentage difference in AEP</a></li>
+<li><a href="../reference/#auto-issue-id-application.Charts.PowerCurve.gen_power_curve_traces">PowerCurve.gen_power_curve_traces computes</a> Generates Plotly Scatter Traces for power curves and renders to the UI. </li>
+</ol>
+<p><img alt="power_curve_calc" src="../images/power_curve_calc.png" /></p>
+<h4 id="other-ui-calculations-will-be-added">Other UI Calculations Will Be Added ....<a class="headerlink" href="#other-ui-calculations-will-be-added" title="Permanent link">&para;</a></h4>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "toc.integrate"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

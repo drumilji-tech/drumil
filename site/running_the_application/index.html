@@ -1,0 +1,761 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../user_guide/">
+      
+      
+        <link rel="next" href="../data_preparation/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>Running the Application - Auto Issue Identification Application</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#set-up-the-environment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Auto Issue Identification Application" class="md-header__button md-logo" aria-label="Auto Issue Identification Application" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Auto Issue Identification Application
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Running the Application
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../user_guide/" class="md-tabs__link">
+          
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reference/" class="md-tabs__link">
+        
+  
+    
+  
+  API Reference
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Auto Issue Identification Application" class="md-nav__button md-logo" aria-label="Auto Issue Identification Application" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Auto Issue Identification Application
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Running the Application
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Running the Application
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-environment" class="md-nav__link">
+    Set Up The Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-packages" class="md-nav__link">
+    Requirements (Packages)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieve-the-necessary-data" class="md-nav__link">
+    Retrieve the necessary data
+  </a>
+  
+    <nav class="md-nav" aria-label="Retrieve the necessary data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-date-ranges-dictate-what-is-shown-in-the-ui" class="md-nav__link">
+    File Date Ranges Dictate what is Shown in the UI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-raw-data" class="md-nav__link">
+    Transform Raw Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform Raw Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-performance-and-reliability-data-sets" class="md-nav__link">
+    Process Performance and Reliability Data Sets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-fleet-output" class="md-nav__link">
+    Process Fleet Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-fault-analysis-data-sets" class="md-nav__link">
+    Process Fault Analysis Data Sets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concatenate-fault-metric-files" class="md-nav__link">
+    Concatenate Fault Metric Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-removed-data-report" class="md-nav__link">
+    Generate Removed Data Report
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-files" class="md-nav__link">
+    Final Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-ui-locally" class="md-nav__link">
+    Run the UI locally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-considerations" class="md-nav__link">
+    Future Considerations
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-raw-data" class="md-nav__link">
+    Changing Raw Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-processing" class="md-nav__link">
+    Distributed Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-connectivity" class="md-nav__link">
+    Database Connectivity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_preparation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Preparation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_cleaning_and_filtering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Cleaning and Filtering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transformation_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Transformation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Interface Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_dictionary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Running the Application</h1>
+
+<h2 id="set-up-the-environment">Set Up The Environment<a class="headerlink" href="#set-up-the-environment" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Download the code from <a href="https://soco365-my.sharepoint.com/:f:/r/personal/tswatts_southernco_com/Documents/Buckets/AI%5E2?csf=1&amp;web=1&amp;e=UNmvKA">SPC Sharepoint</a>Download current code and data</li>
+<li>Install and Open <a href="https://code.visualstudio.com/Download">Visual Studio code</a></li>
+<li>Inside VS Code, Open an integrated terminal <code>ctl + ~</code>
+   <img alt="&quot;integrated terminal&quot;" src="../images/setup_integrated_terminal.png" /></li>
+<li><code>virtualenv aiid_env</code> to create a virtual environment. The virtual environment folder will appear in the root of the project file structure. <br />
+<img alt="virtual env folder" src="../images/setup_virtual_env_folder.png" /></li>
+<li>activate the environment <code>./aiid_env/Scripts/Activate.ps1</code></li>
+<li><code>pip install -r requirements.txt</code> see <a href="#requirements-packages">packages</a> below.</li>
+<li>install jupyter notebooks extension as prompted<br />
+<img alt="&quot;install jupyter&quot;" src="../images/setup_install_jupyter.png" /></li>
+</ol>
+<h2 id="requirements-packages">Requirements (Packages)<a class="headerlink" href="#requirements-packages" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Dash</strong> (<code>dash==2.10.2</code>): <a href="https://dash.plotly.com/">Dash Official Website</a></li>
+<li><strong>Dash Bootstrap Components</strong> (<code>dash-bootstrap-components==1.5.0</code>): <a href="https://dash-bootstrap-components.opensource.faculty.ai/">Dash Bootstrap Components Documentation</a></li>
+<li><strong>Gunicorn</strong> (<code>gunicorn==20.0.4</code>): <a href="https://gunicorn.org/">Gunicorn Official Website</a></li>
+<li><strong>Openpyxl</strong> (<code>openpyxl==3.1.2</code>): <a href="https://openpyxl.readthedocs.io/en/stable/">Openpyxl Documentation</a></li>
+<li><strong>Plotly</strong> (<code>plotly==5.15.0</code>): <a href="https://plotly.com/python/">Plotly Python Graphing Library</a></li>
+<li><strong>SQLAlchemy</strong> (<code>SQLAlchemy==1.4.47</code>): <a href="https://www.sqlalchemy.org/">SQLAlchemy Official Website</a></li>
+<li><strong>SciPy</strong> (<code>scipy==1.5.4</code>): <a href="https://www.scipy.org/">SciPy Official Website</a></li>
+<li><strong>Pandas</strong> (<code>pandas==2.1.4</code>): <a href="https://pandas.pydata.org/">Pandas Official Website</a></li>
+<li><strong>Python Dateutil</strong> (<code>python_dateutil==2.8.2</code>): <a href="https://github.com/dateutil/dateutil">GitHub - dateutil</a></li>
+</ol>
+<h2 id="retrieve-the-necessary-data">Retrieve the necessary data<a class="headerlink" href="#retrieve-the-necessary-data" title="Permanent link">&para;</a></h2>
+<p>Download from PI the following tags (the tag files are downloadable by clicking the links):  </p>
+<ul>
+<li><a href="../data_dictionary/#time-weighted-average-pi">10 Minute Average Tags</a>: Retrieved as a 10 minute (time weighted) average directly from PI, one file per project.   </li>
+<li><a href="../data_dictionary/#sampled-data-pi">10 Second Yaw Tags</a>: Retrieved as 10 second sampled data from PI. One file per project.   </li>
+<li>
+<p><a href="../data_dictionary/#compressed-data">Compressed tags</a>: Retrieved as compressed data from PI. note that each data column will have its own corresponding datetime that will not align with the columns' datetimes. One file per project.   </p>
+</li>
+<li>
+<p>The average file should be one per project and in the directory <code>southernoperations\AIID\AVG</code>.</p>
+</li>
+<li>The compresed file , one per project, goes in <code>southeronoperations\AIID\CMP</code>. </li>
+<li>The Yaw file goes in <code>southernoperations\AIID\YAW</code>.</li>
+</ul>
+<h3 id="file-date-ranges-dictate-what-is-shown-in-the-ui">File Date Ranges Dictate what is Shown in the UI<a class="headerlink" href="#file-date-ranges-dictate-what-is-shown-in-the-ui" title="Permanent link">&para;</a></h3>
+<p>Currently, the only way to define the length of time that the application processes and reports on is by the date ranges found in the raw input files. This doesn't mean that you can not select a portion of time inside that date range once it is loaded into the application, but by default the Transformation Engine processes and makes available all that it is given. This applies more aptly to the case where we would like to limit the date range of one type of file. Yaw Direction files, for example,  are 10 second data and too much of that data can actually crash the program. For yaw error the team decided it was interested most in the current status of misalignment across the fleet so we can see that adequately with a couple of weeks of data, where as all of the other types of analysis use 10 minute data so more can be analyzed in those areas.  </p>
+<h2 id="transform-raw-data">Transform Raw Data<a class="headerlink" href="#transform-raw-data" title="Permanent link">&para;</a></h2>
+<p>Here is the process to run the data transformation in a Jupyter notebook called <code>WALKTHROUGH.ipynb</code> included in  the project files. </p>
+<p><a href="../transformation_model/">Here</a> are more details on how the code accomplishes this. </p>
+<p>Open the Jupyter Notebook <code>WALKTHROUGH.ipynb</code> and run the transformation scripts.  The notebook cells to run are named exactly as follows.  </p>
+<h3 id="process-performance-and-reliability-data-sets">Process Performance and Reliability Data Sets<a class="headerlink" href="#process-performance-and-reliability-data-sets" title="Permanent link">&para;</a></h3>
+<p><img alt="process perf" src="../images/process_performance_and_reliability.png" />
+   This outputs an intermediary file named <code>fleet_daily_severity_scores_stage.csv</code> and the <a href="../data_dictionary/#power-curve-data-set">power curve files</a>.The <code>fleet_daily_severity_scores_stage.csv</code> will be split into files that are consumable by the UI in the following step. This file is not yet useable. </p>
+<h3 id="process-fleet-output">Process Fleet Output<a class="headerlink" href="#process-fleet-output" title="Permanent link">&para;</a></h3>
+<p><img alt="process fleet output" src="../images/process_fleet_output.png" /><br />
+   This performs post-processing on the <code>fleet_daily_severity_scores_stage.csv</code> from step 1 above, breaking that file into three files:
+   <a href="../data_dictionary/#treemap">treemap_data.csv</a>, <a href="../data_dictionary/#treemap-data-simple-efficiency">treemap_data_simple_efficiency.csv</a>, and <a href="../data_dictionary/#radial-yaw-error">radial_yaw_error.csv</a>. </p>
+<h3 id="process-fault-analysis-data-sets">Process Fault Analysis Data Sets<a class="headerlink" href="#process-fault-analysis-data-sets" title="Permanent link">&para;</a></h3>
+<p><img alt="run faults" src="../images/process_fault_analysis.png" />
+   This step produces two files <strong>per project</strong> saved to <code>southernoperations/AIID/Processed Faults</code>:  a daily fault file and a downtime lost energy file. the next step will perfrom some post processign to put all of these files into a single fiel for the UI to consume. <br />
+   The per project results in the <code>Processed Faults</code> Folder are as shown below:<br />
+<img alt="processed fault files" src="../images/processed_fault_files.png" /></p>
+<h3 id="concatenate-fault-metric-files">Concatenate Fault Metric Files<a class="headerlink" href="#concatenate-fault-metric-files" title="Permanent link">&para;</a></h3>
+<p><img alt="concat fault metrics" src="../images/concatenate_fault_metric_files.png" />
+   This step produces two files: <a href="../data_dictionary/#daily-turbine-faults">daily_turbine_fault.csv</a></p>
+<h3 id="generate-removed-data-report"><strong>Generate Removed Data Report</strong><a class="headerlink" href="#generate-removed-data-report" title="Permanent link">&para;</a></h3>
+<p><img alt="recovery" src="../images/generate_removed_data_report.png" /></p>
+<h3 id="final-files">Final Files<a class="headerlink" href="#final-files" title="Permanent link">&para;</a></h3>
+<p>After all of the above steps complete successfully you will have the following files in the <code>southernoperations\AIID</code> directory. These are ready for the UI to consume directly. <br />
+<img alt="final files" src="../images/final_files.png" /></p>
+<h2 id="run-the-ui-locally">Run the UI locally<a class="headerlink" href="#run-the-ui-locally" title="Permanent link">&para;</a></h2>
+<ol>
+<li>in VS code press <code>ctl + ~</code> to open a power shell integrated terminal window. </li>
+<li>Activate the aiid virtual environment by typing the comman <code>./aiid_env/Scripts/Activate.ps1</code>. (aiid) should now preceed the prompt. </li>
+<li>Run the web application locally by typing <code>python index.py</code>. It will notify you that its is now running on 127.0.0.1:8050.</li>
+<li>Navigate in a web browser to 127.0.0.1:8050.  </li>
+</ol>
+<h2 id="future-considerations">Future Considerations<a class="headerlink" href="#future-considerations" title="Permanent link">&para;</a></h2>
+<p>As the application becomes integrated into the enterprise architecture, there will be need to retrieve data via more robust means than were employed during the proof of concept phase of this project. There are some things of note with this in mind. </p>
+<h3 id="changing-raw-data">Changing Raw Data<a class="headerlink" href="#changing-raw-data" title="Permanent link">&para;</a></h3>
+<p>It is likely that the Transformation engine will run daily or weekly and the datasets being accumulated will need to be rerun due changing raw data after calculations have previouslly been completed as with PI Back Filling.  There will need to be a mechanism in the pipeline created that considers whether the raw data has changed. If it has then system determines it should re-process and  overwrite. Other wise the system only needs to process the incremental days beyond the last time of update and append them to the final datasets.  </p>
+<h3 id="distributed-processing">Distributed Processing<a class="headerlink" href="#distributed-processing" title="Permanent link">&para;</a></h3>
+<p>The runs currently for a few months of data can take some time - on order of hours. While we made the optimizations we could in development, there will be other opportunities to speed the run time. One way would be distrubted processing. The code structure is conducive to this as <code>WindFarm</code> objects encapsulate operations that do not depend on other instances of `WindFarm``. This however would involve modifying or extending the code - specifically the way the objects are called and their results aggregated -  to run in a distrubuted manner.</p>
+<h3 id="database-connectivity">Database Connectivity<a class="headerlink" href="#database-connectivity" title="Permanent link">&para;</a></h3>
+<p>It will be desireable to load transformed data into a database that then serves the application directly, without the need for marshalling files. 
+There is essentially a <a href="../reference/#auto-issue-id-application.Model.DataAccess.MSSQL_Repository">stub of a class</a> created with this intent in mind. </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "toc.integrate"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

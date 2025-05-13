@@ -7,4 +7,5 @@ SQLAlchemy
 scipy
 pandas
 python_dateutil
+pandas
 # Install Pandas too (Jupyter will install too when you first run the code)

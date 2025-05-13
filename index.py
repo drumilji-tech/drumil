@@ -3,6 +3,7 @@ import dash_bootstrap_components as dbc
 from dash import dcc, Input, Output
 
 from app import app
+server= app.server
 from Utils.Components import (
     gen_date_intervals,
     gen_sticky_header,

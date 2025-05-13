@@ -15,12 +15,6 @@ app = dash.Dash(
 server = app.server     # ← THIS lets Gunicorn find the Flask server
 
 
-# quick smoke-test layout (you can delete once real pages load)
-app.layout = html.Div(
-    style={"textAlign": "center", "marginTop": "4rem"},
-    children=html.H2("✅ Azure deployment reached Dash app!")
-)
-
 
 app.scripts.config.serve_locally = True
 app.css.config.serve_locally     = True
